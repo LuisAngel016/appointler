@@ -15,6 +15,7 @@ import { ServicesPage } from "@/services/presentation";
 import { SchedulesPage } from "@/schedules/presentation";
 import { BusinessPage } from "@/business/presentation";
 import { ProfilePage } from "@/users/presentation/pages/UserPage";
+import { NotificationsPage } from "@/notifications/presentation/pages/NotificationsPage";
 
 const AuthLayout = lazy(() => import("@/auth/presentation/layouts/AuthLayout"));
 const AdminLayout = lazy(() => import("@/shared/layouts/AdminLayout"));
@@ -104,6 +105,14 @@ export const appRouter = createHashRouter([
                 element: <ClientsPage />
             },
             {
+                path: "notifications",
+                element: <Navigate to="/admin/notifications/all" />
+            },
+            {
+                path: "notifications/:filter",
+                element: <NotificationsPage />
+            },
+            {
                 path: "settings/business",
                 element: <BusinessPage />
             },
@@ -131,6 +140,14 @@ export const appRouter = createHashRouter([
             {
                 path: "appointments",
                 element: <AppointmentsPage />
+            },
+            {
+                path: "notifications",
+                element: <Navigate to="/user/notifications/all" />
+            },
+            {
+                path: "notifications/:filter",
+                element: <NotificationsPage />
             },
             {
                 path: "profile",

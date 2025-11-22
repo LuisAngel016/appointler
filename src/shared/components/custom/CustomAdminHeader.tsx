@@ -1,9 +1,10 @@
 import React, { useRef } from 'react';
 import { useSearchParams } from 'react-router';
-import { Search, Bell, MessageSquare, Sun, Moon, Menu } from 'lucide-react';
+import { Search, MessageSquare, Sun, Moon, Menu } from 'lucide-react';
 import { Input } from '@/shared/components/ui/input';
 import { useThemeContext } from '@/shared/hooks/use-theme-context';
 import { CustomUserDropdown } from './CustomUserDropdown';
+import { NotificationsDropdown } from '@/notifications';
 
 interface HeaderProps {
     onMenuClick: () => void;
@@ -63,10 +64,8 @@ export const CustomAdminHeader: React.FC<HeaderProps> = ({ onMenuClick }) => {
                         <Sun className="h-[1.2rem] w-[1.2rem] scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90" />
                         <Moon className="absolute top-2 left-2 h-[1.2rem] w-[1.2rem] scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0" />
                     </button>
-                    <button className="group relative cursor-pointer p-2 text-gray-600 dark:text-gray-300 hover:hover:text-foreground dark:hover:bg-gray-700 rounded-lg transition-colors">
-                        <Bell size={20} className="transition-transform duration-200 group-hover:rotate-6 group-hover:scale-110" />
-                        <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>
-                    </button>
+
+                    <NotificationsDropdown />
 
                     <button aria-label="Mensajes" className="group cursor-pointer p-2 text-gray-600 dark:text-gray-300 hover:hover:text-foreground dark:hover:bg-gray-700 rounded-lg transition-colors">
                         <MessageSquare size={20} className="transition-transform duration-200 group-hover:rotate-6 group-hover:scale-110" />

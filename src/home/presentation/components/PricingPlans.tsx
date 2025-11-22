@@ -43,7 +43,7 @@ const pricingPlans: PricingPlan[] = [
     {
         title: "Plan Premium",
         description: "Para negocios en crecimiento",
-        price: 29,
+        price: 50,
         period: "/mes",
         features: [
             { text: "Citas ilimitadas", included: true, emphasized: true },
